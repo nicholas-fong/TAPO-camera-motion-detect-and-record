@@ -8,7 +8,7 @@ from zoneinfo import ZoneInfo
 rtsp_url_ffmpeg = "rtsp://username:password@<ip_address>/stream1"  # high-res for recording
 rtsp_url_cv     = "rtsp://username:password@<ip_address>/stream2"  # low-res for motion detection
 
-MOTION_THRESHOLD       = 300      # pixel-count threshold on 640x360 diff
+MOTION_THRESHOLD       = 500      # pixel-count threshold on 640x360 diff
 MEAN_SENSITIVITY       = 0.3      # "Nuclear" gatekeeper: skip math if mean change < this
 MOTION_FRAMES_START    = 1        # frames above threshold to start recording
 MOTION_FRAMES_STOP     = 10       # frames below threshold to consider motion ended
