@@ -16,4 +16,5 @@ In the CONFIG block, you can fine tune the parameters for detection sensitivity.
 sudo apt install python3-opencv ffmpeg
 <br>
 <br>
-At night, esepecially when the IR illuminated, the motion detector is hyper sensitive to flying insects, fog droplets, etc. Some refinemnt of daytime and nightime parameters tuning is needed.
+This Python script works well in day night or at night with visible LED lighting. However, when the TAPO cameera's IR LED are illuminated as the sole source of lighting, motion detection becomes hyper-sensitive to flying insects or fog droplets, causing too massive positive recordings.
+
