@@ -14,3 +14,6 @@ The timezone you are in (inside start_recording() function).
 In the CONFIG block, you can fine tune the parameters for detection sensitivity.
 <br><br>
 sudo apt install python3-opencv ffmpeg
+<br>
+<br>
+At night, esepecially when the IR illuminated, the motion detector is hyper sensitive to flying insects, fog droplets, etc. Some refinemnt of daytime and nightime parameters tuning is needed.
