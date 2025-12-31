@@ -1,6 +1,6 @@
 # TAPO camera: <br>motion-detection -> video-recording <br>(for indoor use) 
 
-The script detects motion, then starts recording video.
+The script detects motion using Open Source Computer Vision Library, after detection, starts recording video.
 
 The following two packages are required: <br>
 *sudo apt install python3-opencv ffmpeg*
@@ -34,7 +34,7 @@ In the Motion gate block, fine tune MOTION_THRESHOLD and MEAN_SENSITIVITY.
 
 # TAPO camera: <br> person-detection -> video-recording <br>(for indoor/outdoor use)
 
-This scriipt detects a person using Open Source Computer Vision Library, after detection, start recording video. Small objects like flying insects or fog droplets will not cause false positives.
+This scriipt detects a person using Open Source Computer Vision Library, after detection, starts recording video. Small objects like flying insects or fog droplets will not cause false positives.
 
 The following three packages are required: <br>
 *sudo apt install python3-opencv ffmpeg numpy*
