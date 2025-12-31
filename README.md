@@ -1,11 +1,11 @@
 # TAPO camera: <br>motion-detection -> video-recording <br>(for indoor use) 
 
-The script detects motion, then start recording video.
+The script detects motion, then starts recording video.
 
 The following two packages are required: <br>
 *sudo apt install python3-opencv ffmpeg*
 
-Rason for just indoor use: due to TAPO camers's night time IR illumination, flying insects, bugs, spider webs, fog droplets and snow will cause excessive false positives.
+Rason for indoor use only: due to TAPO camers's night time IR illumination, flying insects, bugs, spider webs, fog droplets and snow will cause excessive false positives.
 
 
 Python script using RTSP (Real-Time Streaming Protocol) to:
