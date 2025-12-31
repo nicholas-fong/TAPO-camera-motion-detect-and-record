@@ -13,5 +13,3 @@ There are several work around but none is satisfactory:
 There is no satisfactory solution for C200 problem.
 
 According to community group, Tapo C210 has nearly solved the IR issue and the Tapo app can disable the IR.
-
-
