@@ -24,12 +24,12 @@ Edit the script for your local environment as follows:
 
 (1) Your TAPO camera's ip address, username and password that you created using the TAPO app.
 
-(2) Inside start_recording(), edit the path you want to store the video clips and change the timezone parameters.
+(2) Inside start_recording() procedure, edit the path you want to store the video clips and change the timezone parameter.
 
 
 # Sensitivity Tuning:
 
-In the Person detection block, fine tune MIN_PERSON_BBOX_AREA and DNN_CONFIDENCE_THRESH. 
+In the Motion gate block, fine tune MOTION_THRESHOLD and MEAN_SENSITIVITY.
 
 
 # TAPO camera: <br> person-detection -> video-recording <br>(for indoor/outdoor use)
