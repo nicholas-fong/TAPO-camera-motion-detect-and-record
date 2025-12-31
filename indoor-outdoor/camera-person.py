@@ -78,7 +78,7 @@ def open_capture():
 def start_recording():
     """Launch ffmpeg and return the process handle and start time."""
     ts = datetime.datetime.now(ZoneInfo("America/Los_Angeles")).strftime("%Y%m%d_%H%M%S")  # modify your time zone
-    filename = f"/mnt/storage/videos/tapo/cam1_{ts}.mp4"  # you decide where to store the video clips
+    filename = f"~/tapo/cam1_{ts}.mp4"  # you decide where to store the video clips
 
     try:
         proc = subprocess.Popen([
