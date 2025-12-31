@@ -5,7 +5,7 @@ import subprocess
 import numpy as np
 from zoneinfo import ZoneInfo
 
-# --- CONFIG ---
+# --- CONFIG --- 
 
 # RTSP streams
 rtsp_url_ffmpeg = "rtsp://username:password@<ip_address>/stream1"  # high-res for recording
