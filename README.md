@@ -1,4 +1,4 @@
-# TAPO camera: <br>motion-detection -> video-recording (for indoor use) 
+# TAPO camera: <br>motion-detection -> video-recording <br>(for indoor use) 
 
 The script detects motion, then start recording video.
 
@@ -29,19 +29,19 @@ Edit the script for your local environment as follows:
 
 # Sensitivity Tuning:
 
-In the CONFIG block, fine tune the parameters for motion detection sensitivity.
+In the Person detection block, fine tune MIN_PERSON_BBOX_AREA and DNN_CONFIDENCE_THRESH. 
 
 
-# TAPO camera: <br> person-detection -> video-recording (for indoor/outdoor use)
+# TAPO camera: <br> person-detection -> video-recording <br>(for indoor/outdoor use)
 
-This scriipt detects a person, then start recording video. Small objects like flying insects or fog droplets will not cause false positives.
+This scriipt detects a person using Open Source Computer Vision Library, after detection, start recording video. Small objects like flying insects or fog droplets will not cause false positives.
 
-The following two packages are required: <br>
+The following three packages are required: <br>
 *sudo apt install python3-opencv ffmpeg numpy*
 
-Need two MobileNet_SSD files. 
+Need to find and load two MobileNet_SSD files. 
 
-Suggested sub-directory is ~\models\mobilenet_ssd to store the two necessary files.
+Suggested sub-directory is ~\models\mobilenet_ssd\ to store the two files.
 
 (1) MobileNetSSD_deploy (31k bytes) 
 
@@ -53,9 +53,10 @@ Edit the script for your local environment:
 
 (1) Your TAPO camera's ip address, username and password that you created using the TAPO app.
 
-(2) Inside start_recording(), edit the path you want to store the video clips and change the timezone parameters.
+(2) Inside start_recording() procedure, edit the path you want to store the video clips and change the timezone parameters.
 
 # Sensitivity Tuning:
 
-In the Motion gate block, fine tune MOTION_THRESHOLD and MEAN_SENSITIVITY .
-in the Person detection block, fine tune MIN_PERSON_BBOX_AREA and DNN_CONFIDENCE_THRESH.
+In the Motion gate block, fine tune MOTION_THRESHOLD and MEAN_SENSITIVITY.
+
+In the Person detection block, fine tune MIN_PERSON_BBOX_AREA and DNN_CONFIDENCE_THRESH.
