@@ -8,8 +8,8 @@ from zoneinfo import ZoneInfo
 # --- CONFIG ---
 
 # RTSP streams
-rtsp_url_ffmpeg = "rtsp://nicholasfong:sau1kwan@192.168.1.96/stream1"  # high-res for recording
-rtsp_url_cv     = "rtsp://nicholasfong:sau1kwan@192.168.1.96/stream2"  # low-res for motion detection
+rtsp_url_ffmpeg = "rtsp://....../stream1"  # high-res for recording
+rtsp_url_cv     = "rtsp://....../stream2"  # low-res for motion detection
 
 # Motion gate (efficient pre-filter)
 MOTION_THRESHOLD    = 80   # pixel-count threshold on 640x360 diff. 200 OK to ignore cars, 80 for high sens but high CPU load

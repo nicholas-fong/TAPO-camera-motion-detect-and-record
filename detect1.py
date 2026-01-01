@@ -7,8 +7,8 @@ from zoneinfo import ZoneInfo
 # detect motion and record
 
 # --- CONFIG ---
-rtsp_url_ffmpeg = "rtsp://nicholasfong:sau1kwan@192.168.1.96/stream1"  # high-res for recording
-rtsp_url_cv     = "rtsp://nicholasfong:sau1kwan@192.168.1.96/stream2"  # low-res for motion detection
+rtsp_url_ffmpeg = "rtsp://...../stream1"  # high-res for recording
+rtsp_url_cv     = "rtsp://...../stream2"  # low-res for motion detection
 
 MOTION_THRESHOLD       = 600      # pixel-count threshold on 640x360 diff
 MEAN_SENSITIVITY       = 0.4      # "Nuclear" gatekeeper: skip math if mean change < this
