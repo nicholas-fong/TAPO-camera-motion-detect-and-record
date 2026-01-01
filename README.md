@@ -190,15 +190,13 @@ Only one service should run at a time.
 ### Motion detector:
 
 ```
-python3 detect1.py --debug
+python3 /home/nicholas/detect1.py --debug
 ```
 
 ### YOLO detector:
 
 ```
-/full/path/to/python detect2.py --debug
+/home/nicholas/yolo-env/bin/python3  /home/nicholas/detect2.py --debug
 ```
 
-Debug mode overlays bounding boxes and prints detection logs.
-
-Microsoft Copilot helped to shape the code structure.
+Microsoft Copilot helped to shape the code structure and generate README
