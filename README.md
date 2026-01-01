@@ -200,3 +200,5 @@ python3 detect1.py --debug
 ```
 
 Debug mode overlays bounding boxes and prints detection logs.
+
+Microsoft Copilot helped to shape the code structure.
