@@ -8,7 +8,7 @@ There are several work around but none is satisfactory:
 
 (2) Use a light to illuminate camera's capture zone, but this wastes energy and money.
 
-(3) COnnect the C200 to a smart plug and manually (or programmatically) cycle the power before darkness and after brightness. 
+(3) Connect the C200 to a smart plug and manually (or programmatically) cycle the power before darkness and after brightness. 
 
 There is no satisfactory solution for C200 problem.
 
