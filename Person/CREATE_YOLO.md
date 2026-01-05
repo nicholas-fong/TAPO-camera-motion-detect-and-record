@@ -23,7 +23,7 @@ pip install --upgrade pip
 
 ---
 
-## 📥 2. Clone YOLOv5 and Download Weights
+## 📥 2. Clone YOLOv5 and download weights file:
 
 ```bash
 git clone https://github.com/ultralytics/yolov5.git
@@ -35,7 +35,7 @@ wget https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5s.pt
 
 ---
 
-## 📄 3. Create a minimal, deterministic `requirements.txt`
+## 📄 3. Create a clean, minimal, deterministic `requirements.txt`
 
 Create or edit the file requirements.txt:
 
@@ -43,7 +43,7 @@ Create or edit the file requirements.txt:
 nano requirements.txt
 ```
 
-Paste the following lines, delete other useless lines (packages):
+Paste the following lines, do not include any other packages, they crash with each other:
 
 ```
 # YOLOv5 requirements
@@ -59,7 +59,7 @@ onnx
 onnxscript
 ```
 
-Install the modules:
+Install the required modules to get a working system but no more:
 
 ```bash
 pip install -r requirements.txt
@@ -71,15 +71,15 @@ pip install -r requirements.txt
 
 ## 🛠️ 4. Export (spin) YOLOv5s to ONNX format that runs on CPU
 
-Run the export:
+Run the following:
 
 ```bash
 python export.py --weights yolov5s.pt --include onnx --opset 12 --device cpu
 ```
 
-During export, ignore **RuntimeError** during export. It doesn't affet the export of the model which is all you need.
+During above, ignore **RuntimeError** . It doesn't hurt the export of the YOLO model which is all you want.
 
-In the export log, you should see a line similar to below. It is important to see the "CPU"
+In the export log, you should see a line similar to below. It is important to see the "CPU", that is good.
 
 ```
 YOLOV5 v7.0-453-geed9bc19 Python-3.12.3 torch-2.9.1+cu128 CPU
@@ -87,7 +87,7 @@ YOLOV5 v7.0-453-geed9bc19 Python-3.12.3 torch-2.9.1+cu128 CPU
 
 ---
 
-## 🔐 5. Verify Model Integrity (SHA‑256)
+## 🔐 5. Verify YOLO Model Integrity (SHA‑256)
 
 ```bash
 sha256sum yolov5s.onnx yolov5s.pt
@@ -122,14 +122,14 @@ opencv-python==4.12.0.88
 
 ## 💾 7. Save Your Model
 
-Copy these files to a very safe location:
+Copy these files to a `very safe` location:
 
 - `yolov5s.onnx`
 - `yolov5s.pt`
 
 ---
 
-## 🧹 8. Clean Up the Export Environment
+## 🧹 8. Nuke the export environment
 
 ```bash
 deactivate
