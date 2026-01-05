@@ -1,17 +1,17 @@
 ## TAPO Camera Detection Pipeline  
-### Motion or Person Detection Using detect1.py
+### Motion Detection only - motion.py
 
-This project provides detection Python scripts for TAPO security cameras. The script reads the camera’s RTSP sub‑stream and performs real‑time analysis to determine whether meaningful activity is occurring.
+This project provides detection Python scripts mostly for TAPO security cameras. The script reads the camera’s RTSP sub‑stream and performs real‑time analysis to determine whether meaningful activity is occurring.
 
 
-- **Motion detection** (using OpenCV library)
+- **Motion detection** using OpenCV library
 
 
 ---
 
 ## 📦 Detection Script
 
-### detect1.py — OpenCV Motion Detection  
+### motion.py — OpenCV Motion Detection  
 A lightweight, CPU‑efficient motion detector using frame differencing.
 
 **Features**
@@ -29,7 +29,7 @@ A lightweight, CPU‑efficient motion detector using frame differencing.
 5. Threshold + dilate  
 6. Find contours  
 7. If contour area > MIN_AREA → motion detected  
-
+8. Record
 
 
 ---
@@ -40,8 +40,9 @@ A lightweight, CPU‑efficient motion detector using frame differencing.
 ### 1. Install service files
 
 ```
-sudo cp systemd/detect1.service /etc/systemd/system/
+sudo cp systemd/motion.service /etc/systemd/system/
 sudo systemctl daemon-reload
+sudo systemctl start motion.service
 ```
 
 ---
@@ -60,16 +61,16 @@ Stop:
 sudo systemctl stop detect1.service
 ```
 
-### detect1.service (example)
+### motion.service (example)
 
 ```
 [Unit]
-Description=OpenCV Motion Detection (detect1.py)
+Description=OpenCV Motion Detection
 After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /path/to/detect1.py
+ExecStart=/usr/bin/python3 /path/to/motion.py
 Restart=always
 RestartSec=2
 User=yourusername
@@ -86,7 +87,7 @@ WantedBy=multi-user.target
 ### Motion detector:
 
 ```
-python3 /path/to/detect1.py --debug
+python3 /path/to/motion.py --debug
 ```
 
 Microsoft Copilot helped to shape the code structure and generate README

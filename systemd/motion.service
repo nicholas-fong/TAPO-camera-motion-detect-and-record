@@ -1,0 +1,14 @@
+[Unit]
+Description=OpenCV Motion Detection
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/yourname/motion.py
+Restart=always
+RestartSec=2
+User=yourname
+WorkingDirectory=/home/yourname/
+
+[Install]
+WantedBy=multi-user.target
