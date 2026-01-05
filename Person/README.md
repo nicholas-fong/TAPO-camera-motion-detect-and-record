@@ -1,5 +1,7 @@
 In order to use person.py to recognize a person and start recording, a YOLO model saved in onnx format is needed. In addition, a virtual environment is also needed. Once the virtual environment is created, the easiest way is start the script is via systemd because the necessary path is wired in the systemd service file. But you can also start it manually, see Step 6.
 
+
+
 ---
 
 # 🧱 1. Create/install a virtual environment

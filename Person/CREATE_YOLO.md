@@ -1,5 +1,5 @@
-# Spin (export) a YOLO model
-YOLOv5s ONNX Export (FP32, CPU‑Compatible, Opset 12)
+# Spin (export) your YOLOv5 model
+YOLOv5s ,model exported as ONNX format, can be loaded by onnexruntime to do deep neural network inference (to detect a person).
 
 This documents a **fully reproducible procedure** for exporting a clean, CPU‑compatible (as opposed to GPU only) **YOLOv5s.onnx** model for person recognition that has these features:
 
@@ -8,7 +8,7 @@ This documents a **fully reproducible procedure** for exporting a clean, CPU‑c
 - **CPU‑only export (as opposed to GPU)**  
 - **Minimal, deterministic Python environment**  
 
-The resulting `yolov5s.onnx` is suitable for embedded inference, OpenCV, ONNX Runtime, and CPU‑only deployments.
+The resulting `yolov5s.onnx` is suitable for embedded inference, ONNX Runtime, and CPU‑only (no need for GPU) deployments.
 
 ---
 
@@ -23,7 +23,7 @@ pip install --upgrade pip
 
 ---
 
-## 📥 2. Clone YOLOv5 and download weights file:
+## 📥 2. Clone ultralytics's YOLOv5 and download weights file:
 
 ```bash
 git clone https://github.com/ultralytics/yolov5.git
@@ -35,7 +35,7 @@ wget https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5s.pt
 
 ---
 
-## 📄 3. Create a clean, minimal, deterministic `requirements.txt`
+## 📄 3. Edit/Create a clean, minimal, deterministic `requirements.txt`
 
 Create or edit the file requirements.txt:
 
@@ -59,7 +59,7 @@ onnx
 onnxscript
 ```
 
-Install the required modules to get a working system but no more:
+Install the required modules using requirements.txt. Don't add more modules to requirements.txt, unless the system asks for. More modules than bare minimum can cause interdependcy conflict:
 
 ```bash
 pip install -r requirements.txt
@@ -69,7 +69,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🛠️ 4. Export (spin) YOLOv5s to ONNX format that runs on CPU
+## 🛠️ 4. Export (spin) YOLOv5s model to ONNX format that can run on CPU (as opposed to GPU-only).
 
 Run the following:
 
