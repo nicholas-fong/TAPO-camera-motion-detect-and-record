@@ -1,4 +1,4 @@
-In order to use this python script to recognize a person and start recording a YOLO model saved in onnx format is needed. IN addition, a virtual environment is also needed. Once the virtual environment is created, the easiest way is to start the script using systemd because the necessary path is given in the systemd service file.
+In order to use person.py to recognize a person and start recording, a YOLO model saved in onnx format is needed. In addition, a virtual environment is also needed. Once the virtual environment is created, the easiest way is to start the script using systemd because the necessary path is coded in the systemd service file. But you can also start it manually.
 
 ---
 
@@ -77,7 +77,7 @@ opencv-python-headless==4.12.0.88
 
 ---
 
-# 📁 6. Run your inference script
+# 📁 6. Run your person detect and record script
 
 Active the virtual environment, see 2. above
 
