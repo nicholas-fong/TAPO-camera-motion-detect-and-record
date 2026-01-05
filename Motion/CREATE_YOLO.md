@@ -1,14 +1,14 @@
 # Spin (export) a YOLO model
-# YOLOv5s ONNX Export (FP32, CPU‑Compatible, Opset 12)
+YOLOv5s ONNX Export (FP32, CPU‑Compatible, Opset 12)
 
-This repository documents a **fully reproducible procedure** for exporting a clean, CPU‑compatible (as opposed to GPU only) **YOLOv5s.onnx** model that has these features:
+This documents a **fully reproducible procedure** for exporting a clean, CPU‑compatible (as opposed to GPU only) **YOLOv5s.onnx** model for person recognition that has these features:
 
 - **FP32 precision**  
 - **Opset 12** (for maximum compatibility with ONNX Runtime and OpenCV DNN)  
-- **CPU‑only export**  
+- **CPU‑only export (as opposed to GPU)**  
 - **Minimal, deterministic Python environment**  
 
-The resulting `yolov5s.onnx` is suitable for embedded inference, OpenCV DNN, ONNX Runtime, and CPU‑only deployments.
+The resulting `yolov5s.onnx` is suitable for embedded inference, OpenCV, ONNX Runtime, and CPU‑only deployments.
 
 ---
 
@@ -27,6 +27,7 @@ pip install --upgrade pip
 
 ```bash
 git clone https://github.com/ultralytics/yolov5.git
+
 cd yolov5
 
 wget https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5s.pt
@@ -34,15 +35,15 @@ wget https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5s.pt
 
 ---
 
-## 📄 3. Create a Minimal, Deterministic `requirements.txt`
+## 📄 3. Create a minimal, deterministic `requirements.txt`
 
-Create or edit the file:
+Create or edit the file requirements.txt:
 
 ```bash
 nano requirements.txt
 ```
 
-Paste the following, delete the other useless lines:
+Paste the following lines, delete other useless lines (packages):
 
 ```
 # YOLOv5 requirements
@@ -58,7 +59,7 @@ onnx
 onnxscript
 ```
 
-Install:
+Install the modules:
 
 ```bash
 pip install -r requirements.txt
@@ -76,9 +77,9 @@ Run the export:
 python export.py --weights yolov5s.pt --include onnx --opset 12 --device cpu
 ```
 
-During export, safely ignore **RuntimeError** during export. It doesn't affet the export of the model.
+During export, ignore **RuntimeError** during export. It doesn't affet the export of the model which is all you need.
 
-In the export log, you should see a line similar to:
+In the export log, you should see a line similar to below. It is important to see the "CPU"
 
 ```
 YOLOV5 v7.0-453-geed9bc19 Python-3.12.3 torch-2.9.1+cu128 CPU
@@ -101,7 +102,7 @@ Correct checksums:
 
 ---
 
-## 🧪 6. Optional, confirm key package versions
+## 🧪 6. Optional, confirm important package versions
 
 ```bash
 pip freeze | grep -E '^(numpy|onnx|opencv-python)'
