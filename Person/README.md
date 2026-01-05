@@ -2,7 +2,7 @@ In order to use person.py to recognize a person and start recording, a YOLO mode
 
 ---
 
-# 🧱 1. Create the virtual environment
+# 🧱 1. Create/install a virtual environment
 
 ```bash
 cd ~
@@ -29,7 +29,7 @@ source yolo-infer/bin/activate
 Your shell prompt would change to:
 
 ```
-(yolo-infer) yourname@server3:~
+(yolo-infer) yourname@server:~$
 ```
 
 ---
@@ -42,23 +42,25 @@ pip install --upgrade pip
 
 ---
 
-# 📚 4. Install the inference dependencies
+# 📚 4. Install the YOLO inference dependencies
 
-For inference, you kept things minimal — no training stack, no torch, no ultralytics.  
-Your typical inference stack looks like:
+For runtime YOLO model/inference, kept things minimal — no training stack, no torch, no ultralytics.
+A typical runtime inference dependency modules:
 
 ```bash
 pip install numpy opencv-python onnxruntime
 ```
 
-Sometimes you also add missing package if system complains
+You add missing package if system complains
 
 ```bash
 pip install whatever_package_is_missing
 ```
 
-Use your ONNX YOLOv5s model (yolov5.onnx) in your python script.
-
+Use your YOLOv5s model (yolov5.onnx) in your python script.
+```
+YOLO_MODEL_PATH = "/home/yourname/models/yolov5s.onnx" 
+```
 ---
 
 # 🧪 5. Verify the environment
@@ -67,24 +69,26 @@ Use your ONNX YOLOv5s model (yolov5.onnx) in your python script.
 pip freeze | grep -E '^(numpy|onnxruntime|opencv-python-headless)'
 ```
 
-Expected versions:
-
+Correct versions that yolov5s.oonx is happy with:
+<br>Note:  yolov5s.onnx crashes with numpy 2.x, numpy 1.26.4 is happy.
 ```
-numpy==1.26.4  (important, if you see 2.x, pip install numpy==1.26.4)
+numpy==1.26.4  (important: if you see 2.x, pip install numpy==1.26.4)
 onnxruntime==1.20.0
 opencv-python-headless==4.12.0.88
 ```
 
 ---
 
-# 📁 6. Run your person detect and record script
+# 📁 6. Run your person detector and recording script
 
-Active the virtual environment, see 2. above
+Active virtual environment, then invoke
 
 ```bash
-python motion.py
+cd ~
+source yolo-infer/bin/activate
+(yolo-infer) yourname@server:~$ python motion.py
 ```
-Or run your script with systemd, in that case, there is no need to activate an environment first.
+Or start your script with systemd, in that case, there is no need to activate an environment first.
 
 # 📴 7. Deactivate the environment
 
