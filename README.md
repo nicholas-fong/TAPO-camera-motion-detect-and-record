@@ -1,4 +1,4 @@
-## TAPO Camera Detection Pipeline  
+## TAPO Camera Detect and Record script  
 ### Motion Detection only - motion.py
 
 This project provides detection Python scripts mostly for TAPO security cameras. The script reads the camera’s RTSP sub‑stream and performs real‑time analysis to determine whether meaningful activity is occurring.
@@ -18,8 +18,8 @@ A lightweight, CPU‑efficient motion detector using frame differencing.
 - Uses system Python (`/usr/bin/python3`)
 - Extremely fast and low‑CPU
 - Ideal for general motion detection
-- Adjustable sensitivity (threshold, min area)
-- Prone to false positives (shadows, rain, headlights)
+- Tunable sensitivity (threshold, min area)
+- Cons: Prone to false positives (shadows, rain, headlights)
 
 **script**
 1. Read RTSP frame  
@@ -37,7 +37,7 @@ A lightweight, CPU‑efficient motion detector using frame differencing.
 ## ⚙️ Systemd Setup
 
 
-### 1. Install service files
+### 1. Install systemd service files (run in background)
 
 ```
 sudo cp systemd/motion.service /etc/systemd/system/
