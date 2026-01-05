@@ -29,7 +29,7 @@ source yolo-infer/bin/activate
 Your shell prompt would change to:
 
 ```
-(yolo-infer) nicholas@server3:~
+(yolo-infer) yourname@server3:~
 ```
 
 ---
