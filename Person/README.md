@@ -1,5 +1,6 @@
-In order to use person.py to recognize a person and start recording, a YOLO model saved in onnx format is needed. In addition, a virtual environment is also needed. Once the virtual environment is created, the easiest way is start the script is via systemd because the necessary path is wired in the systemd service file. But you can also start it manually, see Step 6.
+In order to recognize a person, Ultralytic's YOLOv5, a real-time object detection framework is used. ONNX (Open Neural Network Exchange) Runtime (ORT), developed by Microsoft, is used provide runtime support.
 
+A Python virtual environment is also needed with the runtime of this recorder. Once the virtual environment is created, the best way is start the script is using systemd because the necessary path is wired in the systemd service file. You can also start it manually under a virtual Python environment, see Step 6.
 
 
 ---

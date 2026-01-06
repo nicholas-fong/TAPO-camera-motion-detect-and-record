@@ -32,7 +32,7 @@ cd yolov5
 
 wget https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5s.pt
 ```
-
+yolov5s.pt is a PyTorch YOLO in .pt format
 ---
 
 ## 📄 3. Edit/Create a clean, minimal, deterministic `requirements.txt`
