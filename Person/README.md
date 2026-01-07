@@ -75,7 +75,7 @@ pip freeze | grep -E '^(numpy|onnxruntime|opencv-python-headless)'
 Correct versions that yolov5s.onnx is happy with:
 <br>Note:  yolov5s.onnx crashes with numpy 2.x, numpy 1.26.4 is happy.
 ```
-numpy==1.26.4  (important: if you see 2.x, pip install numpy==1.26.4)
+numpy==2.2.6  (if errors, downgrade numpy  pip install numpy==1.26.4)
 onnxruntime==1.20.0
 opencv-python-headless==4.12.0.88
 ```
